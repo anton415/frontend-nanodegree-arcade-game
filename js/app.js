@@ -32,11 +32,15 @@ Enemy.prototype.render = function() {
 // Place the player object in a variable called player
 
 var Player = function() {
+  this.x = 200;
+  this.y = 400;
+  this.sprite = 'images/char-boy.png';
+
   Player.prototype.update = function(dt) {
       dt *= 200;  // I don't sure it is right!!!
   };
   Player.prototype.render = function() {
-      //ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+      ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
   };
 };
 
@@ -50,5 +54,5 @@ document.addEventListener('keyup', function(e) {
         40: 'down'
     };
 
-    player.handleInput(allowedKeys[e.keyCode]);
+    // player.handleInput(allowedKeys[e.keyCode]);
 });
