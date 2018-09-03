@@ -29,7 +29,6 @@ var Engine = (function(global) {
     doc.body.appendChild(canvas);
 
     var allEnemies = [new Enemy()];
-    var player = new Player();
 
     /* This function serves as the kickoff point for the game loop itself
      * and handles properly calling the update and render methods.
