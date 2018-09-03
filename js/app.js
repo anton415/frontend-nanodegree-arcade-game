@@ -31,30 +31,23 @@ var Player = function() {
   this.sprite = 'images/char-boy.png';
   this.x = 200;
   this.y = 400;
+};
 
-  Player.prototype.update = function() {
-      this.x = this.x;
-      this.y = this.y;
-  };
-  Player.prototype.render = function() {
-      ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-  };
+Player.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
 
-  Player.prototype.handleInput = function(direction) {
-      console.log("handleInput");
-      if(direction === "right") {
-        console.log("right");
-        this.x += 100;
-        this.y = this.y;
-      } else if(direction === "down") {
-        this.y += 100;
-      } else if(direction === "left") {
-        this.x -= 100;
-      } else if(direction === "up") {
-        this.y -= 100;
-      }
-      this.render();
-  };
+Player.prototype.handleInput = function(direction) {
+  if(direction === "right") {
+    this.x += 100;
+  } else if(direction === "down") {
+    this.y += 100;
+  } else if(direction === "left") {
+    this.x -= 100;
+  } else if(direction === "up") {
+    this.y -= 100;
+  }
+  this.render();
 };
 
 // This listens for key presses and sends the keys to your
