@@ -26,7 +26,6 @@ Enemy.prototype.render = function() {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
-
 var Player = function() {
   this.sprite = 'images/char-boy.png';
   this.x = 200;
@@ -38,14 +37,14 @@ Player.prototype.render = function() {
 };
 
 Player.prototype.handleInput = function(direction) {
-  if(direction === "right") {
-    this.x += 100;
-  } else if(direction === "down") {
-    this.y += 100;
-  } else if(direction === "left") {
-    this.x -= 100;
-  } else if(direction === "up") {
-    this.y -= 100;
+  if(direction === "right" && this.x < 402) {
+    this.x += 101;
+  } else if(direction === "down" && this.y < 400) {
+    this.y += 83;
+  } else if(direction === "left" && this.x > -2) {
+    this.x -= 101;
+  } else if(direction === "up" && this.y > -15) {
+    this.y -= 83;
   }
   this.render();
 };
