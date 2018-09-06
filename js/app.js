@@ -47,6 +47,13 @@ Player.prototype.handleInput = function(direction) {
     this.y -= 83;
   }
   this.render();
+
+  // If the player reaches the water
+  // the game should be reset
+  //  by moving the player back to the initial location.
+  if (this.y === -15) {
+    this.y = 400;
+  }
 };
 
 // This listens for key presses and sends the keys to your
