@@ -81,7 +81,7 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
+        checkCollisions();
     }
 
     /* This is called by the update function and loops through all of the
@@ -140,6 +140,17 @@ var Engine = (function(global) {
         }
 
         renderEntities();
+    }
+
+    function checkCollisions() {
+      allEnemies.forEach(function(enemy) {
+          if(Math.round(enemy.y) === Math.round(player.y)
+           && (Math.round(enemy.x) - 50 < Math.round(player.x)
+           && Math.round(enemy.x) + 50 > Math.round(player.x))) {
+            player.x = 200;
+            player.y = 400;
+          }
+      });
     }
 
     /* This function is called by the render function and is called on each game
