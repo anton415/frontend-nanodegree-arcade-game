@@ -6,10 +6,16 @@ var Enemy = function() {
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
-    this.speed = 100;
+    this.speed = getSpeed();
     this.x = -100;
     this.y = 234;
 };
+
+var getSpeed = function() {
+  const max = 400;
+  const min = 100;
+  return Math.random(max - min) + min;
+}
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
