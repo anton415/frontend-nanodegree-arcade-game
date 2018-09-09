@@ -28,7 +28,27 @@ var Engine = (function(global) {
     canvas.height = 606;
     doc.body.appendChild(canvas);
 
-    var allEnemies = [new Enemy(), new Enemy(), new Enemy()];
+    var enemy1 = new Enemy();
+    enemy1.x = 0;
+    enemy1.y = 68;
+
+    var enemy2 = new Enemy();
+    enemy2.x = -100;
+    enemy2.y = 151;
+
+    var enemy3 = new Enemy();
+    enemy3.x = -200;
+    enemy3.y = 234;
+
+    var enemy4 = new Enemy();
+    enemy4.x = 0;
+    enemy4.y = 234;
+
+    var enemy5 = new Enemy();
+    enemy4.x = -350;
+    enemy4.y = 68;
+
+    var allEnemies = [enemy1, enemy2, enemy3, enemy4, enemy5];
 
     /* This function serves as the kickoff point for the game loop itself
      * and handles properly calling the update and render methods.

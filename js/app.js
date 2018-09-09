@@ -12,8 +12,8 @@ var Enemy = function() {
 };
 
 var getSpeed = function() {
-  const max = 400;
-  const min = 100;
+  const max = 500;
+  const min = 200;
   return Math.random(max - min) + min;
 }
 
