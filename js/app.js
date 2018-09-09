@@ -15,6 +15,11 @@ var Enemy = function() {
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
     this.x = this.x + this.speed * dt;
+
+    // rebirth
+    if (this.x > 500) {
+      this.x = -100;
+    }
 };
 
 // Draw the enemy on the screen, required method for game
